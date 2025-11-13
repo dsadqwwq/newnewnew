@@ -117,9 +117,12 @@
     <section class="panel" role="region" aria-label="Rune-style dialogue">
       <div class="sys">Welcome to the arena<span class="blink">.</span></div>
       <div class="bar">
-        <label style="min-width:70px">Email:</label>
-        <input id="email" class="email" type="email" placeholder="name@example.com">
+        <label style="min-width:70px">Code:</label>
+        <input id="code" class="email" type="text" placeholder="ENTER ACCESS CODE">
         <button class="btn" id="join">JOIN</button>
+      </div>
+      <div style="margin-top:10px;font-size:10px;">
+        <a href="login.html" style="color:#fff3a3;text-decoration:none;">already winning?</a>
       </div>
     </section>
   </main>
@@ -183,8 +186,9 @@
     }
 
     document.getElementById('join').addEventListener('click', () => {
-      const v = document.getElementById('email').value.trim();
-      alert(v ? `Saved: ${v}` : 'Enter an email first');
+      const v = document.getElementById('code').value.trim();
+      if(!v){ alert('Enter an access code first'); return; }
+      window.location.href = 'login.html';
     });
   </script>
 </body>
